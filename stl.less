@@ -1,0 +1,234 @@
+@s: 4px;
+
+.rounded-corners (@radius: @s) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-shadow (@style) {
+  -webkit-box-shadow: @style;
+  -moz-box-shadow:    @style;
+  box-shadow:         @style;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/* main styles*/
+
+
+.menu {
+	padding: @s*3;
+	background: black;
+	color:#959595;
+	min-width: @s*183;
+}
+
+.menu__logo {
+	float: left;
+	padding-left:@s*4;
+}
+.menu__list {
+	float: left;
+	vertical-align: middle;
+	padding-left: @s*12;
+	line-height: @s*6;
+}
+.menu__auth {
+	float: right;
+	vertical-align: middle;
+	line-height: @s*6;
+}
+
+.menu-list__el {
+	padding: @s*2;
+}
+.menu-list__el_active {
+	color: #7dd02d;
+	border: 1px solid #202020;
+	.rounded-corners;
+}
+.search {
+	min-width: @s*185;
+}
+.search-main {
+	padding: @s*2 @s*26;
+	border-bottom:	1px solid #e9e9e9;
+}
+.search-main__field {
+	padding-left:@s*8;
+	padding-right: @s*30;
+	background: url(img/search.png) no-repeat left;
+	margin-top: @s;
+}
+.search-main__input {
+	display: block;
+	border: none;
+	font-size:@s*5;
+	padding: @s*2 0;
+	width:100%;
+}
+.search-main__button {
+	float:right;
+	padding: @s*4 @s*8;
+	background: #247ff8;
+	color: white;
+	border-radius: @s;
+	cursor: pointer;
+}
+
+.search-params{
+	padding: @s*4 @s*5 @s*4 @s*34;
+	border-bottom: 1px solid #c0c0c0;
+	.box-shadow(0 2px 2px #c0c0c0);
+	margin-bottom: @s*16;
+}
+.search-params__left-container {
+	float: left;
+
+}
+.search-params__right-container {
+	float: right;
+
+}
+.param-list {
+	margin-right: -@s*2;
+}
+.param-list__el {
+	background: #f2f2f2;
+	padding: @s*2;
+	display: inline-block;
+	.rounded-corners;
+	border: 1px solid #d4d4d4;
+	margin-right: @s*2;
+	cursor: pointer;
+}
+.param-list__el_location {
+	background: #f2f2f2 url(img/location.png) no-repeat @s*2;
+	padding-left: @s*7
+}
+.title {
+	font-size: 26px;
+}
+.content {
+	padding: 0 @s*6 @s*10;
+	min-width: @s*183;
+	max-width: @s*243;
+}
+
+.content__right {
+	float: right;
+}
+.show-all {
+	background: url(img/search2.png) no-repeat left @s*2;
+	padding: @s*2 0  0 @s*4;
+}
+.content__el {
+	display: inline-block;
+	margin: 0 @s*2 @s*2 0;
+	width: 230px;
+	overflow: hidden;
+}
+.jobs-count {
+	background: #f2f2f2;
+	.rounded-corners;
+}
+.jobs-count__title {
+	font-size: 18px;
+	padding: @s*4 @s*4 @s @s*4;
+}
+.jobs-count__count {
+	font-size: 18px;
+	color: #878787;
+	font-size: 12px;
+	padding: @s @s*4 @s*4 @s*4;
+}
+.companies__title {
+	font-size: 18px;
+	padding: 0 @s*4 @s*2;
+	white-space: nowrap;
+	cursor: pointer;
+	display: block;
+}
+.companies__list {
+	border-top: 1px solid #e9e9e9;
+	border-bottom: 1px solid #e9e9e9;
+	padding: @s*4 @s*4;
+	font-size: 14px;
+}
+.companies-list {
+	margin-bottom: -@s*3;
+}
+.companies-list__el {
+	margin-bottom: @s*3;
+	display: block;
+	cursor: pointer;
+}
+.companies-list__name {
+
+}
+.companies-list__count {
+	float: right;
+	color: #c0c0c0;
+}
